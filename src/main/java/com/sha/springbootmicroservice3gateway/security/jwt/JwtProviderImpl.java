@@ -101,7 +101,7 @@ public class JwtProviderImpl implements JwtProvider {
     }
 
     @Override
-    public boolean validateToken(HttpServletRequest request) {
+    public boolean isTokenvalid(HttpServletRequest request) {
         String token = resolveToken(request);
 
         if (token == null) {
