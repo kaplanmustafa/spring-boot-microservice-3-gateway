@@ -100,6 +100,7 @@ public class JwtProviderImpl implements JwtProvider {
         return username != null ? new UsernamePasswordAuthenticationToken(userDetails, null, authorities) : null;
     }
 
+    @Override
     public boolean validateToken(HttpServletRequest request) {
         String token = resolveToken(request);
 

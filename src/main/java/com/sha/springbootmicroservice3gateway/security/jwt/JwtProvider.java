@@ -10,4 +10,6 @@ public interface JwtProvider {
     String generateToken(UserPrincipal authentication);
 
     Authentication getAuthentication(HttpServletRequest request);
+
+    boolean validateToken(HttpServletRequest request);
 }
