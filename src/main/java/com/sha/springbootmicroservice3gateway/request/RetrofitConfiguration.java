@@ -40,4 +40,12 @@ public class RetrofitConfiguration {
                 .readTimeout(TIMEOUT_IN_SECS, TimeUnit.SECONDS)
                 .writeTimeout(TIMEOUT_IN_SECS, TimeUnit.SECONDS);
     }
+
+    @Bean
+    public ProductServiceRequest productServiceRequest(Retrofit.Builder secureKeyBuilder, @Value("${product.service.url}") String baseUrl) {
+        return secureKeyBuilder
+                .baseUrl(baseUrl)
+                .build()
+                .create(ProductServiceRequest.class);
+    }
 }
