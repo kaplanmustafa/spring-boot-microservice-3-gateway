@@ -48,4 +48,12 @@ public class RetrofitConfiguration {
                 .build()
                 .create(ProductServiceRequest.class);
     }
+
+    @Bean
+    public TransactionServiceRequest transactionServiceRequest(Retrofit.Builder secureKeyBuilder, @Value("${transaction.service.url}") String baseUrl) {
+        return secureKeyBuilder
+                .baseUrl(baseUrl)
+                .build()
+                .create(TransactionServiceRequest.class);
+    }
 }
